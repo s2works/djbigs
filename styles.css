@@ -513,20 +513,36 @@ img, iframe { display: block; max-width: 100%; }
   flex-wrap: wrap;
 }
 
-.social {
-  padding: 14px 28px;
-  border-radius: 999px;
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--surface);
-  font-weight: 600;
-  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+  color: var(--text);
+  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.social:hover {
-  transform: translateY(-2px);
+.icon-btn svg { width: 26px; height: 26px; }
+
+.icon-btn:hover {
+  transform: translateY(-3px);
   border-color: var(--accent);
   background: var(--surface-2);
+  color: var(--accent);
 }
+
+.mail-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.mail-btn svg { width: 20px; height: 20px; }
 
 /* ---------- Footer ---------- */
 .footer {
