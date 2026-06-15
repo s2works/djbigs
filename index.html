@@ -10,7 +10,7 @@
   <meta property="og:title" content="DJ BIG S" />
   <meta property="og:description" content="Rising force in the global house music scene — high-energy sets, groove-driven productions." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/hero.webp" />
+  <meta property="og:image" content="assets/hero-wide.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,9 +37,16 @@
   </header>
 
   <main id="top">
-    <!-- Hero -->
+    <!-- Hero (full-bleed, horizontal image) -->
     <section class="hero">
-      <div class="hero-copy">
+      <div class="hero-bg" data-parallax="0.18">
+        <picture>
+          <source media="(max-width: 700px)" srcset="assets/hero-wide-sm.webp" />
+          <img src="assets/hero-wide.webp" alt="DJ BIG S live" fetchpriority="high" />
+        </picture>
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-inner">
         <p class="eyebrow">House · Tech · Urban</p>
         <h1 class="hero-title">DJ&nbsp;BIG&nbsp;S</h1>
         <p class="hero-sub">
@@ -48,7 +55,7 @@
         </p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#listen">Listen Now</a>
-          <a class="btn btn-ghost" href="#shows">See Shows</a>
+          <a class="btn btn-ghost" href="#shows">Upcoming Shows</a>
         </div>
         <div class="hero-tags">
           <span>Nicky Romero · Protocol Radio</span>
@@ -56,12 +63,7 @@
           <span>Montreal</span>
         </div>
       </div>
-      <div class="hero-media">
-        <picture>
-          <source media="(max-width: 600px)" srcset="assets/hero-sm.webp" />
-          <img src="assets/hero.webp" alt="DJ BIG S" width="1200" height="1500" fetchpriority="high" />
-        </picture>
-      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
     </section>
 
     <!-- About -->
@@ -71,7 +73,7 @@
         <h2>The Sound</h2>
       </div>
       <div class="about-grid">
-        <div class="about-media">
+        <div class="about-media tilt" data-tilt>
           <picture>
             <source media="(max-width: 600px)" srcset="assets/about-sm.webp" />
             <img src="assets/about.webp" alt="DJ BIG S portrait" width="1000" height="1250" loading="lazy" />
@@ -142,33 +144,52 @@
       </div>
     </section>
 
-    <!-- Feature banner -->
+    <!-- Feature banner (parallax) -->
     <section class="feature" aria-label="DJ BIG S live">
-      <picture>
-        <source media="(max-width: 600px)" srcset="assets/feature-sm.webp" />
-        <img src="assets/feature.webp" alt="DJ BIG S" loading="lazy" />
-      </picture>
+      <div class="feature-media" data-parallax="0.14">
+        <picture>
+          <source media="(max-width: 600px)" srcset="assets/feature-sm.webp" />
+          <img src="assets/feature.webp" alt="DJ BIG S" loading="lazy" />
+        </picture>
+      </div>
       <div class="feature-overlay">
         <p class="feature-quote">"Bringing the energy. Setting the tone."</p>
       </div>
     </section>
 
-    <!-- Shows -->
+    <!-- Upcoming Shows -->
     <section id="shows" class="section">
       <div class="section-head">
-        <span class="kicker">03 — Stages</span>
-        <h2>Stages &amp; Support</h2>
+        <span class="kicker">03 — Live</span>
+        <h2>Upcoming Shows</h2>
       </div>
-      <ul class="shows-list">
-        <li><span class="show-name">ÎleSoniq</span><span class="show-meta">MainStage · w/ Ghetto Birds</span></li>
-        <li><span class="show-name">Electric Pines</span><span class="show-meta">Festival</span></li>
-        <li><span class="show-name">Magnetic World</span><span class="show-meta">Festival</span></li>
-        <li><span class="show-name">Muzique</span><span class="show-meta">Montreal</span></li>
-        <li><span class="show-name">Red Room</span><span class="show-meta">Montreal</span></li>
-        <li><span class="show-name">Motel Motel</span><span class="show-meta">Montreal</span></li>
-        <li><span class="show-name">CID</span><span class="show-meta">Direct Support</span></li>
-        <li><span class="show-name">Corrupt UK</span><span class="show-meta">Direct Support</span></li>
+      <ul class="upcoming">
+        <li class="gig tilt" data-tilt>
+          <div class="gig-date"><span class="gig-month">TBA</span><span class="gig-day">—</span></div>
+          <div class="gig-info">
+            <span class="gig-venue">New dates dropping soon</span>
+            <span class="gig-city">Follow for announcements</span>
+          </div>
+          <a class="gig-cta" href="#contact">Notify Me</a>
+        </li>
+        <li class="gig tilt" data-tilt>
+          <div class="gig-date"><span class="gig-month">TBA</span><span class="gig-day">—</span></div>
+          <div class="gig-info">
+            <span class="gig-venue">Venue to be announced</span>
+            <span class="gig-city">Montreal, QC</span>
+          </div>
+          <a class="gig-cta" href="#contact">Notify Me</a>
+        </li>
+        <li class="gig tilt" data-tilt>
+          <div class="gig-date"><span class="gig-month">TBA</span><span class="gig-day">—</span></div>
+          <div class="gig-info">
+            <span class="gig-venue">Festival season 2026</span>
+            <span class="gig-city">International</span>
+          </div>
+          <a class="gig-cta" href="#contact">Notify Me</a>
+        </li>
       </ul>
+      <p class="shows-note">Booking or want to be first to know? <a href="#contact">Get in touch ↓</a></p>
     </section>
 
     <!-- Contact / Social -->
