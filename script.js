@@ -11,6 +11,32 @@ if (nav) {
   onNavScroll();
 }
 
+/* ---------- Mobile menu (hamburger) ---------- */
+const navToggle = document.getElementById("navToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+if (navToggle && mobileMenu) {
+  const setMenu = (open) => {
+    mobileMenu.classList.toggle("open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    mobileMenu.setAttribute("aria-hidden", String(!open));
+  };
+  navToggle.addEventListener("click", () =>
+    setMenu(navToggle.getAttribute("aria-expanded") !== "true")
+  );
+  // Close after tapping a link
+  mobileMenu.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => setMenu(false))
+  );
+  // Close on Escape, or when resizing up to desktop
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setMenu(false);
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 560) setMenu(false);
+  });
+}
+
 /* ---------- Scroll reveal ---------- */
 const revealEls = document.querySelectorAll(".section");
 revealEls.forEach((el) => el.setAttribute("data-reveal", ""));

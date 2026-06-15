@@ -23,7 +23,8 @@
   <div class="bg-glow" aria-hidden="true"></div>
   <div class="bg-grid" aria-hidden="true"></div>
 
-  <!-- Nav: transparent, logo centered with two links each side -->
+  <!-- Nav: transparent, logo centered with two links each side (desktop)
+       On mobile: logo left, hamburger right with a dropdown menu -->
   <header class="nav">
     <nav class="nav-side nav-left">
       <a href="#about">About</a>
@@ -36,7 +37,18 @@
       <a href="#shows">Shows</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- Mobile dropdown menu -->
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#about">About</a>
+    <a href="#listen">Listen</a>
+    <a href="#shows">Shows</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <main id="top">
     <!-- Hero (minimal full-bleed image) -->
