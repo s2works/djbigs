@@ -1,11 +1,11 @@
 // Current year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Scroll-reveal for sections
+const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Scroll reveal ---------- */
 const revealEls = document.querySelectorAll(".section");
 revealEls.forEach((el) => el.setAttribute("data-reveal", ""));
-
-const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (prefersReduced || !("IntersectionObserver" in window)) {
   revealEls.forEach((el) => el.classList.add("is-visible"));
@@ -22,4 +22,51 @@ if (prefersReduced || !("IntersectionObserver" in window)) {
     { threshold: 0.12 }
   );
   revealEls.forEach((el) => observer.observe(el));
+}
+
+/* ---------- Parallax (depth on images) ---------- */
+const parallaxEls = Array.from(document.querySelectorAll("[data-parallax]"));
+const tiltEls = Array.from(document.querySelectorAll("[data-tilt]"));
+const isFinePointer = window.matchMedia("(pointer: fine)").matches;
+
+if (!prefersReduced && parallaxEls.length) {
+  let ticking = false;
+  const update = () => {
+    const vh = window.innerHeight;
+    parallaxEls.forEach((el) => {
+      const speed = parseFloat(el.getAttribute("data-parallax")) || 0.15;
+      const rect = el.getBoundingClientRect();
+      // distance of element center from viewport center
+      const offset = rect.top + rect.height / 2 - vh / 2;
+      el.style.transform = `translate3d(0, ${(-offset * speed).toFixed(1)}px, 0)`;
+    });
+    ticking = false;
+  };
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  update();
+}
+
+/* ---------- 3D tilt on hover (desktop / fine pointer only) ---------- */
+if (!prefersReduced && isFinePointer) {
+  const MAX = 7; // degrees
+  tiltEls.forEach((el) => {
+    el.style.perspective = "900px";
+    el.addEventListener("pointermove", (e) => {
+      const r = el.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform =
+        `perspective(900px) rotateY(${(px * MAX).toFixed(2)}deg) rotateX(${(-py * MAX).toFixed(2)}deg) translateZ(0)`;
+    });
+    el.addEventListener("pointerleave", () => {
+      el.style.transform = "perspective(900px) rotateY(0) rotateX(0)";
+    });
+  });
 }
