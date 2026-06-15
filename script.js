@@ -3,6 +3,14 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* ---------- Nav: add backdrop once scrolled off the hero ---------- */
+const nav = document.querySelector(".nav");
+if (nav) {
+  const onNavScroll = () => nav.classList.toggle("scrolled", window.scrollY > 60);
+  window.addEventListener("scroll", onNavScroll, { passive: true });
+  onNavScroll();
+}
+
 /* ---------- Scroll reveal ---------- */
 const revealEls = document.querySelectorAll(".section");
 revealEls.forEach((el) => el.setAttribute("data-reveal", ""));
