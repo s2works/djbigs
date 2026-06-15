@@ -10,6 +10,7 @@
   <meta property="og:title" content="DJ BIG S" />
   <meta property="og:description" content="Rising force in the global house music scene — high-energy sets, groove-driven productions." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/hero.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,7 +25,9 @@
 
   <!-- Nav -->
   <header class="nav">
-    <a href="#top" class="brand">BIG&nbsp;S</a>
+    <a href="#top" class="brand" aria-label="DJ BIG S home">
+      <img src="assets/logo.png" alt="DJ BIG S" class="brand-logo" />
+    </a>
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#listen">Listen</a>
@@ -36,20 +39,28 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero">
-      <p class="eyebrow">House · Tech · Urban</p>
-      <h1 class="hero-title">DJ&nbsp;BIG&nbsp;S</h1>
-      <p class="hero-sub">
-        High-energy sets. Infectious, groove-driven productions.
-        One to watch in the next wave of top-tier DJs.
-      </p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#listen">Listen Now</a>
-        <a class="btn btn-ghost" href="#shows">See Shows</a>
+      <div class="hero-copy">
+        <p class="eyebrow">House · Tech · Urban</p>
+        <h1 class="hero-title">DJ&nbsp;BIG&nbsp;S</h1>
+        <p class="hero-sub">
+          High-energy sets. Infectious, groove-driven productions.
+          One to watch in the next wave of top-tier DJs.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#listen">Listen Now</a>
+          <a class="btn btn-ghost" href="#shows">See Shows</a>
+        </div>
+        <div class="hero-tags">
+          <span>Nicky Romero · Protocol Radio</span>
+          <span>ÎleSoniq MainStage</span>
+          <span>Montreal</span>
+        </div>
       </div>
-      <div class="hero-tags">
-        <span>Nicky Romero · Protocol Radio</span>
-        <span>ÎleSoniq MainStage</span>
-        <span>Montreal</span>
+      <div class="hero-media">
+        <picture>
+          <source media="(max-width: 600px)" srcset="assets/hero-sm.webp" />
+          <img src="assets/hero.webp" alt="DJ BIG S" width="1200" height="1500" fetchpriority="high" />
+        </picture>
       </div>
     </section>
 
@@ -60,6 +71,12 @@
         <h2>The Sound</h2>
       </div>
       <div class="about-grid">
+        <div class="about-media">
+          <picture>
+            <source media="(max-width: 600px)" srcset="assets/about-sm.webp" />
+            <img src="assets/about.webp" alt="DJ BIG S portrait" width="1000" height="1250" loading="lazy" />
+          </picture>
+        </div>
         <div class="about-copy">
           <p>
             DJ BIG S is a rising force in the global house music scene, known for his
@@ -83,12 +100,12 @@
             Ghetto Birds for their explosive collaboration "Like an 808" — a defining moment in his
             career. His international footprint continues to grow, with a debut performance in France.
           </p>
+          <ul class="stats">
+            <li><span class="stat-num">2024</span><span class="stat-label">ÎleSoniq MainStage Debut</span></li>
+            <li><span class="stat-num">3+</span><span class="stat-label">Montreal Flagship Venues</span></li>
+            <li><span class="stat-num">∞</span><span class="stat-label">Global Dancefloors</span></li>
+          </ul>
         </div>
-        <ul class="stats">
-          <li><span class="stat-num">2024</span><span class="stat-label">ÎleSoniq MainStage Debut</span></li>
-          <li><span class="stat-num">3+</span><span class="stat-label">Montreal Flagship Venues</span></li>
-          <li><span class="stat-num">∞</span><span class="stat-label">Global Dancefloors</span></li>
-        </ul>
       </div>
     </section>
 
@@ -125,6 +142,17 @@
       </div>
     </section>
 
+    <!-- Feature banner -->
+    <section class="feature" aria-label="DJ BIG S live">
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets/feature-sm.webp" />
+        <img src="assets/feature.webp" alt="DJ BIG S" loading="lazy" />
+      </picture>
+      <div class="feature-overlay">
+        <p class="feature-quote">"Bringing the energy. Setting the tone."</p>
+      </div>
+    </section>
+
     <!-- Shows -->
     <section id="shows" class="section">
       <div class="section-head">
@@ -157,9 +185,8 @@
   </main>
 
   <footer class="footer">
-    <span>© <span id="year"></span> DJ BIG S</span>
-    <span class="footer-dot">·</span>
-    <span>House · Tech · Urban</span>
+    <img src="assets/logo.png" alt="DJ BIG S" class="footer-logo" />
+    <span>© <span id="year"></span> DJ BIG S · House · Tech · Urban</span>
   </footer>
 
   <script src="script.js"></script>
