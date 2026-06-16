@@ -374,62 +374,36 @@ img, iframe { display: block; max-width: 100%; }
 }
 
 /* ---------- Upcoming Shows ---------- */
-.upcoming {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 16px;
+.shows-intro {
+  max-width: 560px;
+  margin: -10px auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: clamp(15px, 2.2vw, 18px);
 }
 
-.gig {
-  display: grid;
-  grid-template-columns: 96px 1fr auto;
-  align-items: center;
-  gap: 22px;
-  padding: 22px 24px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+.ig-feed {
+  margin: 34px auto 0;
+  max-width: 880px;
+  min-height: 60px;
+}
+
+/* responsive iframes pasted in from SnapWidget/LightWidget */
+.ig-feed iframe {
+  width: 100% !important;
+  border: 0;
+  display: block;
   border-radius: var(--radius);
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
-.gig:hover {
-  border-color: rgba(255, 77, 45, 0.6);
-  background: var(--surface-2);
-}
+.shows-cta { margin-top: 30px; text-align: center; }
 
-.gig-date {
-  display: flex;
-  flex-direction: column;
+.ig-btn {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px 0;
-  border-radius: 12px;
-  background: linear-gradient(160deg, rgba(255,77,45,0.18), rgba(124,77,255,0.18));
-  border: 1px solid var(--border);
+  gap: 10px;
 }
-.gig-month { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-.gig-day { font-family: "Sora", sans-serif; font-size: 24px; font-weight: 800; line-height: 1; }
-
-.gig-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.gig-venue { font-family: "Sora", sans-serif; font-weight: 600; font-size: 18px; }
-.gig-city { color: var(--muted); font-size: 14px; }
-
-.gig-cta {
-  padding: 11px 22px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--bg-soft);
-  font-weight: 600;
-  font-size: 14px;
-  white-space: nowrap;
-  transition: background 0.2s ease, transform 0.15s ease;
-}
-.gig-cta:hover { background: var(--accent); border-color: var(--accent); }
-
-.shows-note { margin: 26px 0 0; color: var(--muted); }
-.shows-note a { color: var(--accent); font-weight: 600; }
+.ig-btn svg { width: 20px; height: 20px; }
 
 /* ---------- Perspective / tilt ---------- */
 .tilt {
@@ -595,9 +569,6 @@ img, iframe { display: block; max-width: 100%; }
   .hero-scrim {
     background: linear-gradient(180deg, rgba(10,10,15,0.4) 0%, rgba(10,10,15,0.0) 35%, rgba(10,10,15,0.95) 100%);
   }
-  .gig { grid-template-columns: 64px 1fr; gap: 14px; row-gap: 14px; padding: 18px; }
-  .gig-cta { grid-column: 1 / -1; text-align: center; }
-  .gig-day { font-size: 20px; }
 }
 
 /* Disable tilt/parallax motion when reduced motion is requested */
