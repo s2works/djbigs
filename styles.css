@@ -383,9 +383,8 @@ img, iframe { display: block; max-width: 100%; }
 }
 
 .ig-feed {
-  margin: 34px auto 0;
+  margin: 0 auto;
   max-width: 880px;
-  min-height: 60px;
 }
 
 /* responsive iframes pasted in from SnapWidget/LightWidget */
@@ -394,9 +393,10 @@ img, iframe { display: block; max-width: 100%; }
   border: 0;
   display: block;
   border-radius: var(--radius);
+  margin-top: 34px; /* spacing only appears once a widget iframe is present */
 }
 
-.shows-cta { margin-top: 30px; text-align: center; }
+.shows-cta { margin-top: 22px; text-align: center; }
 
 .ig-btn {
   display: inline-flex;
